@@ -14,17 +14,17 @@
 
 enum custom_keycodes {
    QWERTY = SAFE_RANGE,
-   SYMB,
-   NAV,
-   ADJUST,
-   SC2,
-   THECORE,
-   DIABLO,
+   L_SYMB,
+   L_NAV,
+   L_SC2,
+   L_DIABLO,
    //quick type
    CTT,
-   TTC,
+   TTC
+   #ifdef DIABLO_PLAYERS_CHANGE_ENABLED
+   ,
    //players
-   PL_C,
+   L_PLAY,
    PL_1,
    PL_2,
    PL_3,
@@ -33,6 +33,7 @@ enum custom_keycodes {
    PL_6,
    PL_7,
    PL_8
+   #endif
 };
 
 #ifdef REPEAT_ENABLED
@@ -57,22 +58,15 @@ enum custom_keycodes {
    #include "diablo_player_change.c"
 #endif
 
-// Shortcut to make keymap more readable
-#define SYM_L   MO(_SYMB)
+// System Layers
+#define L_SYMB   MO(_SYMB)
+#define L_NAV    MO(_NAV)
 
-#define KC_ALAS LALT_T(KC_PAST)
-#define KC_CTPL LCTL_T(KC_BSLS)
-
-#define KC_NAGR LT(_NAV, KC_GRV)
-#define KC_NAMI LT(_NAV, KC_MINS)
-#define SYM_NAV LT(_NAV, KC_CAPS)
-#define KC_ADEN LT(_ADJUST, KC_END)
-#define KC_ADPU LT(_ADJUST, KC_PGUP)
 
 // Layer Switch Shortcuts
-#define SYM_SC2 TO(_SC2)
-#define SYM_Q TO(_QWERTY)
-#define SYM_DIA TO(_DIABLO)
-#define PL_C OSL(_PLAYERS)
+#define L_SC2 TO(_SC2)
+#define L_QWRT TO(_QWERTY)
+#define L_DIA TO(_DIABLO)
+#define L_PLAY OSL(_PLAYERS)
 
 #include "custom_user_scripting.c"
