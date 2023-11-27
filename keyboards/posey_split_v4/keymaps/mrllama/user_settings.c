@@ -2,6 +2,7 @@
 #define QUICK_GAME_TYPE_ENABLED
 #define TEMP_TYPE_LAYER _TEMPRTY
 #define DIABLO_PLAYERS_CHANGE_ENABLED
+#define LED_LOGO_ENABLED
 #define REPEAT_ENABLED
 #define REPEAT_DELAY 150
 #define REPEAT_TERM 5
@@ -48,8 +49,7 @@ enum custom_keycodes {
 
 #ifdef QUICK_GAME_TYPE_ENABLED
    #include "quick_game_type.c"
-#endif
-#ifndef QUICK_GAME_TYPE_ENABLED
+#else
    #define TTC KC_ENTER
    #define CTT KC_ENTER
 #endif
@@ -70,3 +70,4 @@ enum custom_keycodes {
 #define L_PLAY OSL(_PLAYERS)
 
 #include "custom_user_scripting.c"
+#include "led_shifter.c"
