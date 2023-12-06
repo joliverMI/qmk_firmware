@@ -128,14 +128,15 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                             key_repeat = keycode;
                             key_pressed = true;
                             key_timer = timer_read();
-                } else if (keycode==key_repeat) {
+                } else {
                     unregister_code(keycode);
-                    key_pressed = false;
-                    key_repeating = false;
-                    repeat_delay = REPEAT_DELAY;
-                    repeat_term = REPEAT_TERM;
+                    if (keycode==key_repeat) {
+                        key_pressed = false;
+                        key_repeating = false;
+                        repeat_delay = REPEAT_DELAY;
+                        repeat_term = REPEAT_TERM;
+                    }
                 }
-
                 return false;
         }
         #endif
