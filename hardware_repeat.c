@@ -20,7 +20,19 @@ static uint16_t keys_to_repeat[] = { FAST_REPEAT_KEYS };
     #ifndef BOOSTED_REPEAT_DELAY
     #define BOOSTED_REPEAT_DELAY REPEAT_DELAY
     #endif
+    #ifndef BOOSTED_REPEAT_TERM
+    #define BOOSTED_REPEAT_TERM REPEAT_TERM
+    #endif
 static uint16_t keys_to_boost[] = { BOOSTED_REPEAT_KEYS };
+#ifdef BOOSTED2_REPEAT_ENABLED
+    #ifndef BOOSTED2_REPEAT_DELAY
+    #define BOOSTED2_REPEAT_DELAY BOOSTED_REPEAT_DELAY
+    #endif
+    #ifndef BOOSTED2_REPEAT_TERM
+    #define BOOSTED2_REPEAT_TERM BOOSTED_REPEAT_TERM
+    #endif
+static uint16_t keys_to_boost2[] = { BOOSTED2_REPEAT_KEYS };
+#endif
 #endif
 static uint16_t layers_to_check[] = { FAST_REPEAT_LAYERS };
 
@@ -42,6 +54,16 @@ bool check_if_boosted_key(uint8_t keycode){
     }
     return false;
 }
+#ifdef BOOSTED2_REPEAT_ENABLED
+bool check_if_boosted2_key(uint8_t keycode){
+    for (int i = 0; i < BOOSTED2_REPEAT_KEY_COUNT; i++){
+        if (keys_to_boost2[i] == keycode){
+            return true;
+        }
+    }
+    return false;
+}
+#endif
 #endif
 
 #ifndef REPEAT_ALL_KEYS_ENABLED
@@ -87,12 +109,18 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                                 key_repeating = false;
                             }
                             register_code(keycode);
-                            unregister_code(keycode);
                             #ifdef BOOSTED_REPEAT_ENABLED
                             if (check_if_boosted_key(keycode)) {
                                 repeat_delay = BOOSTED_REPEAT_DELAY;
                                 repeat_term = BOOSTED_REPEAT_TERM;
-                            } else {
+                            } 
+                            #ifdef BOOSTED2_REPEAT_ENABLED
+                            else if(check_if_boosted2_key(keycode)) {
+                                repeat_delay = BOOSTED2_REPEAT_DELAY;
+                                repeat_term = BOOSTED2_REPEAT_TERM;
+                            } 
+                            #endif
+                            else {
                                 repeat_delay = REPEAT_DELAY;
                                 repeat_term = REPEAT_TERM;
                             }
@@ -101,6 +129,7 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                             key_pressed = true;
                             key_timer = timer_read();
                 } else if (keycode==key_repeat) {
+                    unregister_code(keycode);
                     key_pressed = false;
                     key_repeating = false;
                     repeat_delay = REPEAT_DELAY;
