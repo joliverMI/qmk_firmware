@@ -1,20 +1,9 @@
-#include "keymap_german.h"
-
 // Custom Macros
-#define TEMP_TYPE_LAYER _TEMPRTY
-#define LED_LOGO_ENABLED
 #define REPEAT_ENABLED
 #define REPEAT_ALL_KEYS_ENABLED
-#define BOOSTED_REPEAT_ENABLED
-#define BOOSTED2_REPEAT_ENABLED
-#define REPEAT_DELAY 108
-#define REPEAT_TERM 5
-#define BOOSTED_REPEAT_TERM 11
-#define BOOSTED_REPEAT_KEYS KC_E
-#define BOOSTED_REPEAT_KEY_COUNT 1
-#define BOOSTED2_REPEAT_TERM 1
-#define BOOSTED2_REPEAT_KEYS KC_Z
-#define BOOSTED2_REPEAT_KEY_COUNT 1
+#define REPEAT_DELAY 135
+#define REPEAT_TERM 10
+#define LED_LOGO_ENABLED
 #define FAST_REPEAT_LAYERS _SC2
 #define FAST_REPEAT_LAYER_COUNT 1
 
@@ -26,16 +15,34 @@ enum custom_keycodes {
    //quick type
    CTT,
    TTC
+   #ifdef DIABLO_PLAYERS_CHANGE_ENABLED
+   ,
+   //players
+   L_PLAY,
+   PL_1,
+   PL_2,
+   PL_3,
+   PL_4,
+   PL_5,
+   PL_6,
+   PL_7,
+   PL_8
+   #endif
 };
 
 #ifdef REPEAT_ENABLED
+   #ifndef REPEAT_DELAY
+      #define REPEAT_DELAY 100
+   #endif
+   #ifndef REPEAT_TERM
+      #define REPEAT_TERM 5
+   #endif
    #include "hardware_repeat.c"
 #endif
 
 #ifdef QUICK_GAME_TYPE_ENABLED
    #include "quick_game_type.c"
-#endif
-#ifndef QUICK_GAME_TYPE_ENABLED
+#else
    #define TTC KC_ENTER
    #define CTT KC_ENTER
 #endif
@@ -44,7 +51,6 @@ enum custom_keycodes {
    #include "diablo_player_change.c"
 #endif
 
-// Shortcut to make keymap more readable
 // System Layers
 #define L_SYMB   MO(_SYMB)
 #define L_NAV    MO(_NAV)
