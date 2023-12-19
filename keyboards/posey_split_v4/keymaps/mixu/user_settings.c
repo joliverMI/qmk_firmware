@@ -1,8 +1,8 @@
 // Custom Macros
 #define REPEAT_ENABLED
 #define REPEAT_ALL_KEYS_ENABLED
-#define REPEAT_DELAY 135
-#define REPEAT_TERM 6
+#define REPEAT_DELAY 115
+#define REPEAT_TERM 9
 #define FAST_REPEAT_LAYERS _SC2
 #define FAST_REPEAT_LAYER_COUNT 1
 
