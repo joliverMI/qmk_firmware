@@ -1,21 +1,38 @@
 // Custom Macros
-// #define REPEAT_ENABLED
-// #define REPEAT_ALL_KEYS_ENABLED
-// #define REPEAT_DELAY 135
-// #define REPEAT_TERM 10
+#define REPEAT_ENABLED
+#define REPEAT_ALL_KEYS_ENABLED
+#define REPEAT_DELAY 135
+#define REPEAT_TERM 10
 
-// #define FAST_REPEAT_LAYERS _SC2
-// #define FAST_REPEAT_LAYER_COUNT 1
+#define BOOSTED_REPEAT_ENABLED
+#define BOOSTED_REPEAT_DELAY 350
+#define BOOSTED_REPEAT_KEYS KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7
+#define BOOSTED_REPEAT_KEY_COUNT 7
+
+#define FAST_REPEAT_LAYERS _SC2
+#define FAST_REPEAT_LAYER_COUNT 1
 
 enum custom_keycodes {
    QWERTY = SAFE_RANGE,
-   SYMB,
-   NAV,
-   ADJUST,
-   SC2,
+   L_SYMB,
+   L_NAV,
+   L_SC2,
    //quick type
    CTT,
    TTC
+   #ifdef DIABLO_PLAYERS_CHANGE_ENABLED
+   ,
+   //players
+   L_PLAY,
+   PL_1,
+   PL_2,
+   PL_3,
+   PL_4,
+   PL_5,
+   PL_6,
+   PL_7,
+   PL_8
+   #endif
 };
 
 #ifdef REPEAT_ENABLED
@@ -40,22 +57,14 @@ enum custom_keycodes {
    #include "diablo_player_change.c"
 #endif
 
-// Shortcut to make keymap more readable
-#define SYM_L   MO(_SYMB)
+// System Layers
+#define L_SYMB   MO(_SYMB)
+#define L_NAV    MO(_NAV)
 
-#define KC_ALAS LALT_T(KC_PAST)
-#define KC_CTPL LCTL_T(KC_BSLS)
-
-#define KC_NAGR LT(_NAV, KC_GRV)
-#define KC_NAMI LT(_NAV, KC_MINS)
-#define SYM_NAV LT(_NAV, KC_CAPS)
-#define KC_ADEN LT(_ADJUST, KC_END)
-#define KC_ADPU LT(_ADJUST, KC_PGUP)
 
 // Layer Switch Shortcuts
-#define SYM_SC2 TO(_SC2)
-#define SYM_Q TO(_QWERTY)
-#define SYM_DIA TO(_DIABLO)
-#define PL_C OSL(_PLAYERS)
+#define L_SC2 TO(_SC2)
+#define L_QWRT TO(_QWERTY)
 
 #include "custom_user_scripting.c"
+#include "led_shifter.c"
