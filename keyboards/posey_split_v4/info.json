@@ -1,6 +1,6 @@
 {
-    "manufacturer": "Javier Oliver",
-    "keyboard_name": "posey_split_v3",
+    "manufacturer": "Posey's Mechanical Keyboards",
+    "keyboard_name": "posey_split_v4",
     "maintainer": "joliverMI",
     "bootloader": "rp2040",
     "processor": "RP2040",
@@ -46,8 +46,8 @@
         }
     },
     "usb": {
-        "device_version": "0.1.0",
-        "pid": "0x0002",
+        "device_version": "1.0.0",
+        "pid": "0x0003",
         "vid": "0x4A4F"
     },
     "layouts": {
