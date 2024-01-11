@@ -126,6 +126,7 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                                 key_repeating = false;
                             }
                             register_code(keycode);
+                            unregister_code(keycode);
                             #ifdef BOOSTED_REPEAT_ENABLED
                             if (check_if_boosted_key(keycode)) {
                                 repeat_delay = BOOSTED_REPEAT_DELAY;
