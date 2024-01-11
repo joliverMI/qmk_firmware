@@ -43,6 +43,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
          rgblight_sethsv(C_NAV);
          break;
       #endif
+      #ifdef C_SC2
+      case _SC2:         
+         rgblight_sethsv(C_SC2);
+         break;
+      #endif
    }
    return state;
 }
