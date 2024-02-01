@@ -1,10 +1,12 @@
 // Custom Macros
 #define REPEAT_ENABLED
 #define REPEAT_ALL_KEYS_ENABLED
-#define REPEAT_DELAY 115
-#define REPEAT_TERM 0
+#define REPEAT_DELAY 150
+#define REPEAT_TERM 1
+// #define LED_LOGO_ENABLED
 #define FAST_REPEAT_LAYERS _SC2
 #define FAST_REPEAT_LAYER_COUNT 1
+#define LAYER_LIGHT_MODE RGBLIGHT_MODE_BREATHING
 
 enum custom_keycodes {
    QWERTY = SAFE_RANGE,
@@ -36,7 +38,7 @@ enum custom_keycodes {
    #ifndef REPEAT_TERM
       #define REPEAT_TERM 5
    #endif
-   #include "hardware_repeat_flip.c"
+   #include "hardware_repeat.c"
 #endif
 
 #ifdef QUICK_GAME_TYPE_ENABLED
@@ -51,8 +53,8 @@ enum custom_keycodes {
 #endif
 
 // System Layers
-#define L_SYMB   MO(_SYMB)
-#define L_NAV    MO(_NAV)
+#define L_SYMB   LT(_SYMB, KC_F7)
+#define L_NAV    TT(_NAV)
 
 
 // Layer Switch Shortcuts

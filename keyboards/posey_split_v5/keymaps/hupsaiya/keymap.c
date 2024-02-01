@@ -11,9 +11,9 @@
 
 //Colors
 #define C_QWERTY HSV_CYAN
-#define C_SYMB HSV_GREEN
+#define C_SYMB HSV_MAGENTA
 #define C_NAV HSV_RED
-#define C_SC2 HSV_MAGENTA
+#define C_SC2 HSV_GREEN
 
 #include "user_settings.c"
 
@@ -45,8 +45,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      //├─────────────────┼────────┼────────┼────────┼────────┼────────┼───────┤ ├────────┼────────┼────────┼────────┼────────┼────────┼────────────────┤
         KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,     KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,   KC_RSFT,
      //├──────────┬──────┴─┬───────┼───────┴────────┼────────┴────────┴───────┤ ├────────┴────────┴────────┼────────┼────────┼────────┼────────────────┤
-        KC_LCTL,   KC_LGUI, KC_LALT,    L_NAV,                  KC_SPC,                    KC_SPC,          L_NAV,   KC_RGUI, KC_RALT, KC_APP,  KC_RCTL
-     //└──────────┴────────┴───────┴────────────────┴ss─────────────────────────┘ └──────────────────────────┴────────┴────────┴────────┴───────┴────────┘
+        KC_LCTL,   KC_LGUI, KC_LALT,L_NAV    ,                  KC_SPC,                    KC_SPC,          L_NAV,   KC_RGUI, KC_RALT, KC_APP,  KC_RCTL
+     //└──────────┴────────┴───────┴────────────────┴─────────────────────────┘ └──────────────────────────┴────────┴────────┴────────┴───────┴────────┘
     ),
     [_TEMPRTY] = LAYOUT_posey_split(
     // ┌────────┐        ┌────────┬────────┬────────┬────────┬────────┬───────┐ ┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬───────┐

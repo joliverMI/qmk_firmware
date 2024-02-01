@@ -1,12 +1,20 @@
 // Custom Macros
+#define LED_LOGO_ENABLED
 #define REPEAT_ENABLED
 #define REPEAT_ALL_KEYS_ENABLED
-#define REPEAT_DELAY 155
-#define REPEAT_TERM 1
-// #define LED_LOGO_ENABLED
+#define REPEAT_DELAY 133
+#define REPEAT_TERM 5
+// #define BOOSTED_REPEAT_ENABLED
+// #define BOOSTED2_REPEAT_ENABLED
+// #define BOOSTED_REPEAT_TERM 1
+// #define BOOSTED_REPEAT_KEYS KC_Z, KC_E
+// #define BOOSTED_REPEAT_KEY_COUNT 2
+// #define BOOSTED2_REPEAT_DELAY 200
+// #define BOOSTED2_REPEAT_TERM 1
+// #define BOOSTED2_REPEAT_KEYS KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_Q, KC_W
+// #define BOOSTED2_REPEAT_KEY_COUNT 9
 #define FAST_REPEAT_LAYERS _SC2
 #define FAST_REPEAT_LAYER_COUNT 1
-#define LAYER_LIGHT_MODE RGBLIGHT_MODE_BREATHING
 
 enum custom_keycodes {
    QWERTY = SAFE_RANGE,
@@ -53,8 +61,8 @@ enum custom_keycodes {
 #endif
 
 // System Layers
-#define L_SYMB   LT(_SYMB, KC_F7)
-#define L_NAV    TT(_NAV)
+#define L_SYMB   MO(_SYMB)
+#define L_NAV    MO(_NAV)
 
 
 // Layer Switch Shortcuts

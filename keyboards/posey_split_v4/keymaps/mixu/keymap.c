@@ -13,7 +13,7 @@
 #define C_QWERTY HSV_CYAN
 #define C_SYMB HSV_GREEN
 #define C_NAV HSV_RED
-#define C_SC2 HSV_MAGENTA
+#define C_SC2 HSV_ORANGE
 
 #include "user_settings.c"
 
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYMB] = LAYOUT_posey_split(
     // ┌────────┐        ┌────────┬────────┬────────┬────────┬────────┬───────┐ ┌────────┬────────┬────────┬────────┬────────┬────────┬────────┬───────┐
-        KC_ESC,  KC_TRNS, KC_TRNS, KC_F12,  KC_F13,  L_SC2,   KC_TRNS, QWRT,  KC_TRNS, L_SC2,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, QK_BOOT,
+        KC_ESC,  KC_TRNS, KC_TRNS, KC_F12,  KC_F13,  L_SC2,   KC_TRNS, L_QWRT,  KC_TRNS, L_SC2,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, QK_BOOT,
      //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼───────┤ ├────────┼────────┼────────┼────────┼────────┼────────┼────────┴───────┤
         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, QK_CLEAR_EEPROM,
      //├────────┴────────┼────────┼────────┼────────┼────────┼────────┼───────┤ ├────────┼────────┼────────┼────────┼────────┼────────┼────────┬───────┤

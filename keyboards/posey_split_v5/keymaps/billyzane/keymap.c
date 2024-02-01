@@ -10,10 +10,10 @@
 #define _SC2 2
 
 //Colors
-#define C_QWERTY HSV_CYAN
+#define C_QWERTY HSV_GREEN
 #define C_SYMB HSV_MAGENTA
-#define C_NAV HSV_RED
-#define C_SC2 HSV_GREEN
+#define C_NAV HSV_CYAN
+#define C_SC2 HSV_RED
 
 #include "user_settings.c"
 
