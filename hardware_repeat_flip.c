@@ -121,6 +121,7 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                     if (keycode==key_repeat) {
                         key_pressed = false;
                         key_repeating = false;
+                        key_last_send_press = false;
                         repeat_delay = REPEAT_DELAY;
                         repeat_term = REPEAT_TERM;
                     }
@@ -141,14 +142,14 @@ void matrix_scan_user(void) {
             key_last_send_press = true;
             key_timer = timer_read();
         }
-        if (key_repeating && timer_elapsed(key_timer) > repeat_term) {
-            key_timer = timer_read();
-            if (key_last_send_press) {
-                unregister_code(key_repeat);
-                key_last_send_press = false;
-            } else {
+        if (key_repeating) {
+            if (!key_last_send_press) {
                 register_code(key_repeat);
                 key_last_send_press = true;
+            } else if (timer_elapsed(key_timer) > repeat_term) {
+                key_timer = timer_read();
+                unregister_code(key_repeat);
+                key_last_send_press = false;
             }
         }
     }

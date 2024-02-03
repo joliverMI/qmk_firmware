@@ -7,18 +7,17 @@
 #define REPEAT_MODS_ENABLED
 #define REPEAT_FROW_ENABLED
 #define REPEAT_DELAY 130
-#define REPEAT_TERM 6
-#define BOOSTED_REPEAT_ENABLED
-#define BOOSTED_REPEAT_DELAY 130
-#define BOOSTED_REPEAT_TERM 0
-#define BOOSTED_REPEAT_KEYS KC_BSPC, KC_EQL, KC_F
-#define BOOSTED_REPEAT_KEY_COUNT 3
-#define BOOSTED2_REPEAT_ENABLED
-#define BOOSTED2_REPEAT_DELAY 130
-#define BOOSTED2_REPEAT_TERM 1
-#define BOOSTED2_REPEAT_KEYS KC_A, KC_S, KC_D, KC_Z, KC_C, \
-                             KC_6, KC_7, KC_8, KC_9, KC_BSLS
-#define BOOSTED2_REPEAT_KEY_COUNT 8
+#define REPEAT_TERM 3
+// #define BOOSTED_REPEAT_ENABLED
+// #define BOOSTED_REPEAT_DELAY 130
+// #define BOOSTED_REPEAT_TERM 0
+// #define BOOSTED_REPEAT_KEYS KC_BSPC, KC_EQL, KC_F
+// #define BOOSTED_REPEAT_KEY_COUNT 3
+// #define BOOSTED2_REPEAT_ENABLED
+// #define BOOSTED2_REPEAT_DELAY 130
+// #define BOOSTED2_REPEAT_TERM 0
+// #define BOOSTED2_REPEAT_KEYS KC_A, KC_S, KC_D, KC_Z, KC_C, KC_6, KC_7, KC_8, KC_9, KC_BSLS
+// #define BOOSTED2_REPEAT_KEY_COUNT 8
 #define FAST_REPEAT_LAYERS _RECORE
 #define FAST_REPEAT_LAYER_COUNT 1
 
@@ -53,7 +52,7 @@ enum custom_keycodes {
    #ifndef REPEAT_TERM
       #define REPEAT_TERM 5
    #endif
-   #include "hardware_repeat_flip.c"
+   #include "hardware_repeat.c"
 #endif
 
 #ifdef QUICK_GAME_TYPE_ENABLED
