@@ -48,6 +48,16 @@ layer_state_t layer_state_set_user(layer_state_t state) {
          rgblight_sethsv(C_SC2);
          break;
       #endif
+      #ifdef C_SG
+      case _STORMGATE:
+         rgblight_sethsv(C_SG);
+         break;     
+      #endif
+      #ifdef C_SG2
+      case _SGMODS:
+         rgblight_sethsv(C_SG2);
+         break;     
+      #endif
    }
    return state;
 }

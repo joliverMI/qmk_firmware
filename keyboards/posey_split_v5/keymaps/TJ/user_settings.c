@@ -1,16 +1,20 @@
 // Custom Macros
+#define LED_LOGO_ENABLED
 #define REPEAT_ENABLED
 #define REPEAT_ALL_KEYS_ENABLED
-#define REPEAT_DELAY 135
-#define REPEAT_TERM 4
-
-#define BOOSTED_REPEAT_ENABLED
-#define BOOSTED_REPEAT_DELAY 350
-#define BOOSTED_REPEAT_KEYS KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7
-#define BOOSTED_REPEAT_KEY_COUNT 3
-
-#define FAST_REPEAT_LAYERS _SC2, _SGT
-#define FAST_REPEAT_LAYER_COUNT 2
+#define REPEAT_DELAY 133
+#define REPEAT_TERM 11
+// #define BOOSTED_REPEAT_ENABLED
+// #define BOOSTED2_REPEAT_ENABLED
+// #define BOOSTED_REPEAT_TERM 1
+// #define BOOSTED_REPEAT_KEYS KC_Z, KC_E
+// #define BOOSTED_REPEAT_KEY_COUNT 2
+// #define BOOSTED2_REPEAT_DELAY 200
+// #define BOOSTED2_REPEAT_TERM 1
+// #define BOOSTED2_REPEAT_KEYS KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_Q, KC_W
+// #define BOOSTED2_REPEAT_KEY_COUNT 9
+#define FAST_REPEAT_LAYERS _SC2
+#define FAST_REPEAT_LAYER_COUNT 1
 
 enum custom_keycodes {
    QWERTY = SAFE_RANGE,
@@ -42,13 +46,12 @@ enum custom_keycodes {
    #ifndef REPEAT_TERM
       #define REPEAT_TERM 5
    #endif
-   #include "hardware_repeat_flip.c"
+   #include "hardware_repeat.c"
 #endif
 
 #ifdef QUICK_GAME_TYPE_ENABLED
    #include "quick_game_type.c"
-#endif
-#ifndef QUICK_GAME_TYPE_ENABLED
+#else
    #define TTC KC_ENTER
    #define CTT KC_ENTER
 #endif

@@ -17,5 +17,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
    }
    #endif
 
+   #ifdef MOD_SPOOF_ENABLED
+   if (!process_mod_spoof(keycode, record)) {
+      return false;
+   }
+   #endif
+
    return true;
 };
