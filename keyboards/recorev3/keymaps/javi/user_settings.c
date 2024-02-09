@@ -123,6 +123,12 @@ enum custom_keycodes {
 #define L_SG TO(_STORMGATE)
 
 
+/* Mod spoofing definitions
+The mod spoofing script will catch keycodes SG_1 through SG_9 for control group stealing with CTL and
+it will catch keycodes SL_1 through SL_7 for camera location adding with SHIFT. SGS_1 through SGS_9
+reference back to the intended keycode for the given control group. SLS_1 through SLS_7 reference back
+to the intended keycode for the given camera location. 
+*/
 #ifdef MOD_SPOOF_ENABLED
 #define SGS_1 KC_A
 #define SGS_2 KC_C
