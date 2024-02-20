@@ -19,9 +19,8 @@ static bool key_repeating = false;
 static uint16_t repeat_delay = REPEAT_DELAY;
 static uint8_t repeat_term = REPEAT_TERM;
 static uint16_t key_repeat = 0;
-#ifdef FAST_REPEAT_KEYS
-static uint16_t keys_to_repeat[] = { FAST_REPEAT_KEYS };
-#endif
+static bool key_last_send_press = false;
+
 #ifdef BOOSTED_REPEAT_ENABLED
     #ifndef BOOSTED_REPEAT_DELAY
     #define BOOSTED_REPEAT_DELAY REPEAT_DELAY
@@ -40,6 +39,7 @@ static uint16_t keys_to_boost[] = { BOOSTED_REPEAT_KEYS };
 static uint16_t keys_to_boost2[] = { BOOSTED2_REPEAT_KEYS };
 #endif
 #endif
+
 static uint16_t layers_to_check[] = { FAST_REPEAT_LAYERS };
 
 bool check_large_layer(void){
@@ -72,42 +72,12 @@ bool check_if_boosted2_key(uint8_t keycode){
 #endif
 #endif
 
-#ifdef FAST_REPEAT_KEYS
-bool check_if_repeat_key(uint8_t keycode){
-    for (int i = 0; i < FAST_REPEAT_KEY_COUNT; i++){
-        if (keys_to_repeat[i] == keycode){
-            return true;
-        }
-    }
-    return false;
-}
-#endif
-
 bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
     if (check_large_layer()){
-        #ifdef FAST_REPEAT_KEYS
-        if (check_if_repeat_key(keycode)){
-            if (record->event.pressed){
-                    if (keycode!=key_repeat) {
-                        key_repeating = false;
-                    }
-                    register_code(keycode);
-                    unregister_code(keycode);
-                    #ifdef BOOSTED_REPEAT_ENABLED
-                    boosted = check_if_boosted_key(keycode);
-                    #endif
-                    key_repeat = keycode;
-                    key_pressed = true;
-                    key_timer = timer_read();
-                } else {
-                    key_pressed = false;
-                    key_repeating = false;
-                }
-
-                return false;
-        }
-        #else
         switch (keycode) {
+            #ifdef REPEAT_ALL_KEYS_ENABLED
+            case KC_A ... KC_F24:
+            #else
             #ifdef REPEAT_ALPHAS_ENABLED
             case KC_A ... KC_Z:
             #endif
@@ -120,6 +90,7 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
             #ifdef REPEAT_FROW_ENABLED
             case KC_F1 ... KC_F12:
             case KC_F13 ... KC_F24:
+            #endif
             #endif
                 if (record->event.pressed){
                             if (keycode!=key_repeat) {
@@ -150,13 +121,13 @@ bool process_repeat_key(uint16_t keycode, keyrecord_t *record) {
                     if (keycode==key_repeat) {
                         key_pressed = false;
                         key_repeating = false;
+                        key_last_send_press = false;
                         repeat_delay = REPEAT_DELAY;
                         repeat_term = REPEAT_TERM;
                     }
                 }
                 return false;
         }
-        #endif
     } else if (key_pressed) {
         key_pressed = false;
         key_repeating = false;
@@ -168,13 +139,18 @@ void matrix_scan_user(void) {
     if (key_pressed) {
         if (!key_repeating && timer_elapsed(key_timer) > repeat_delay) {
             key_repeating = true;
+            key_last_send_press = true;
             key_timer = timer_read();
         }
-        if (key_repeating && timer_elapsed(key_timer) > repeat_term) {
-            register_code(key_repeat);
-            key_timer = timer_read();
-            unregister_code(key_repeat);
+        if (key_repeating) {
+            if (!key_last_send_press) {
+                register_code(key_repeat);
+                key_last_send_press = true;
+            } else if (timer_elapsed(key_timer) > repeat_term) {
+                key_timer = timer_read();
+                unregister_code(key_repeat);
+                key_last_send_press = false;
+            }
         }
-        
     }
 }
