@@ -10,12 +10,12 @@
 #define _SC2 2
 
 //Colors
-#define C_QWERTY HSV_PINK
-#define C_SYMB HSV_BLUE
+#define C_QWERTY HSV_BLUE
+#define C_SYMB HSV_RED
 #define C_NAV HSV_GREEN
-#define C_SC2 HSV_RED
+#define C_SC2 HSV_MAGENTA
 
-#define LAYER_LIGHT_MODE RGBLIGHT_MODE_BREATHING
+// #define LAYER_LIGHT_MODE RGBLIGHT_MODE_BREATHING
 
 #include "user_settings.c"
 

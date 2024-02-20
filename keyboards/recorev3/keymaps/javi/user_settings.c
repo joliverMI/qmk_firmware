@@ -137,7 +137,7 @@ to the intended keycode for the given camera location.
 #define SGS_5 KC_PMNS
 #define SGS_6 KC_M
 #define SGS_7 KC_N
-#define SGS_8 KC_O
+#define SGS_8 KC_S
 #define SGS_9 KC_I
 #define SLS_1 KC_R
 #define SLS_2 KC_E
