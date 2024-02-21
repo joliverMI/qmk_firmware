@@ -1,6 +1,8 @@
 // Copyright 2024 Javier Oliver (@joliverMI)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#pragma once
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
    #ifdef DIABLO_PLAYERS_CHANGE_ENABLED
    if (!process_diablo_player_change(keycode, record)) {

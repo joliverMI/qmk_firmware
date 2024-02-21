@@ -22,6 +22,7 @@
 Basic symmetric per-key algorithm. Uses an 8-bit counter per key.
 When no state changes have occured for DEBOUNCE milliseconds, we push the state.
 */
+#pragma once
 
 #include "matrix.h"
 #include "timer.h"

@@ -1,6 +1,8 @@
 // Copyright 2024 Javier Oliver (@joliverMI)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#pragma once
+
 #ifndef LAYER_LIGHT_MODE
 #define LAYER_LIGHT_MODE RGBLIGHT_MODE_STATIC_LIGHT
 #endif
