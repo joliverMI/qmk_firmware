@@ -5,8 +5,8 @@
 *A short description of the keyboard/project*
 
 * Keyboard Maintainer: [Javier Oliver](https://github.com/joliverMI)
-* Hardware Supported: *The PCBs, controllers supported*
-* Hardware Availability: *Links to where you can find this hardware*
+* Hardware Supported: Recore PCBs
+* Hardware Availability: poseysmechanicalkeyboards.com
 
 Make example for this keyboard (after setting up your build environment):
 

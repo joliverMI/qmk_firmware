@@ -1,9 +1,12 @@
+// Copyright 2024 Javier Oliver (@joliverMI)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #pragma once
 
 #include "quantum.h"
 #define kno KC_NO
 
-#define LAYOUT_posey_split(\
+#define LAYOUT_game_split_85(\
 k00, k01, k02, k03, k04, k05, k06, k07,   k42, k43, k44, k45, k46, k47, k48, k49,\
 k08, k09, k10, k11, k12, k13, k14, k15,   k50, k51, k52, k53, k54, k55, k56,\
 k16, k17, k18, k19, k20, k21, k22,        k57, k58, k59, k60, k61, k62, k63, k64,\
@@ -26,4 +29,4 @@ k37, k38, k39, k40, k41,                  k79, k80, k81, k82, k83, k84\
     { kno, k79, k80, k81, k82, k83, kno, k84} \
 }
 
-#define LAYOUT LAYOUT_posey_split
+#define LAYOUT LAYOUT_game_split_85

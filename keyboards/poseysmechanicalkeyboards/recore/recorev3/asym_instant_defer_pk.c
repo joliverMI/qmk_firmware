@@ -2,6 +2,7 @@
  * Copyright 2017 Alex Ong <the.onga@gmail.com>
  * Copyright 2020 Andrei Purdea <andrei@purdea.ro>
  * Copyright 2021 Simon Arlott
+ * Copyright 2024 Javier Oliver (@joliverMI)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
