@@ -50,6 +50,9 @@
         "pid": "0x0003",
         "vid": "0x4A4F"
     },
+    "layout_aliases": {
+        "LAYOUT": "LAYOUT_game_split_85"
+    },
     "layouts": {
         "LAYOUT_game_split_85": {
             "layout": [

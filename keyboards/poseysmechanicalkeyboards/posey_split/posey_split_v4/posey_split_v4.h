@@ -28,5 +28,3 @@ k37, k38, k39, k40, k41,                  k79, k80, k81, k82, k83, k84\
     { k72, k73, k74, k75, k76, k77, k78, kno}, \
     { kno, k79, k80, k81, k82, k83, kno, k84} \
 }
-
-#define LAYOUT LAYOUT_game_split_85
