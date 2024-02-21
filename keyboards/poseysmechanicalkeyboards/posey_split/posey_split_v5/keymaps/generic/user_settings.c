@@ -1,3 +1,6 @@
+// Copyright 2024 Javier Oliver (@joliverMI)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 // Custom Macros
 // #define LED_LOGO_ENABLED
 #define REPEAT_ENABLED

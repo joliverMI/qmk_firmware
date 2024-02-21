@@ -1,4 +1,7 @@
 // Custom Macros
+// Copyright 2024 Javier Oliver (@joliverMI)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
 #define REPEAT_ENABLED
 #define REPEAT_ALPHAS_ENABLED
 #define REPEAT_NUMBERS_ENABLED
