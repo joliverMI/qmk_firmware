@@ -1,6 +1,6 @@
 # posey_split_v3
 
-[![posey_split_v3](https://imgur.com/a/JOy6dks)
+![posey_split_v5](https://imgur.com/g3yf6al)
 
 *A short description of the keyboard/project*
 
