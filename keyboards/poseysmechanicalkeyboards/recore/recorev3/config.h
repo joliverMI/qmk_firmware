@@ -5,7 +5,7 @@
 
 /*Split keyboard configuration*/
 // Hardware Settings
-#define SPLIT_HAND_PIN GP18 //GP18 at High is for Left
+#define SPLIT_HAND_PIN GP18
 #define SERIAL_PIO_USE_PIO1
 #define SERIAL_USART_FULL_DUPLEX
 #define SERIAL_USART_TX_PIN GP1
