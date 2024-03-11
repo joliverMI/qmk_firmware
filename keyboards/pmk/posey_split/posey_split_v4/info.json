@@ -1,6 +1,6 @@
 {
     "manufacturer": "Posey's Mechanical Keyboards",
-    "keyboard_name": "posey_split_v5",
+    "keyboard_name": "posey_split_v4",
     "maintainer": "joliverMI",
     "bootloader": "rp2040",
     "build": {
@@ -29,10 +29,10 @@
             "enabled": true,
             "max": 4
         },
-        "led_count": 2,
+        "led_count": 1,
         "sleep": true,
         "split": true,
-        "split_count": [1, 1]
+        "split_count": [1, 0]
     },
     "split": {
         "enabled": true,
@@ -47,7 +47,7 @@
     "url": "poseysmechanicalkeyboards.com",
     "usb": {
         "device_version": "1.0.0",
-        "pid": "0x0005",
+        "pid": "0x0003",
         "vid": "0x4A4F"
     },
     "layout_aliases": {
