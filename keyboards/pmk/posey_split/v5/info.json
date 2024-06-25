@@ -22,8 +22,8 @@
     },
     "processor": "RP2040",
     "ws2812": {
-        "pin": "GP17",
-        "driver": "vendor"
+        "driver": "vendor",
+        "pin": "GP17"
     },
     "rgblight": {
         "animations": {
@@ -33,10 +33,10 @@
             "enabled": true,
             "max": 4
         },
-        "led_count": 1,
+        "led_count": 2,
         "sleep": true,
         "split": true,
-        "split_count": [1, 0]
+        "split_count": [1, 1]
     },
     "split": {
         "enabled": true,
@@ -115,12 +115,12 @@
                 {"matrix": [9, 5], "label": "\"", "x": 14.044, "y": 3},
                 {"matrix": [9, 6], "label": "Enter", "x": 15.044, "y": 3, "w": 2.25},
                 {"matrix": [4, 0], "label": "Shift", "x": 0, "y": 4, "w": 2.25},
-                {"matrix": [4, 1], "label": "Z", "x": 2.25, "y": 4},
-                {"matrix": [4, 2], "label": "X", "x": 3.25, "y": 4},
-                {"matrix": [4, 3], "label": "C", "x": 4.25, "y": 4},
-                {"matrix": [4, 4], "label": "V", "x": 5.25, "y": 4},
-                {"matrix": [4, 5], "label": "B", "x": 6.25, "y": 4},
-                {"matrix": [4, 6], "label": "N", "x": 7.25, "y": 4},
+                {"matrix": [4, 2], "label": "Z", "x": 2.25, "y": 4},
+                {"matrix": [4, 3], "label": "X", "x": 3.25, "y": 4},
+                {"matrix": [4, 4], "label": "C", "x": 4.25, "y": 4},
+                {"matrix": [4, 5], "label": "V", "x": 5.25, "y": 4},
+                {"matrix": [4, 6], "label": "B", "x": 6.25, "y": 4},
+                {"matrix": [4, 7], "label": "N", "x": 7.25, "y": 4},
                 {"matrix": [10, 0], "label": "B", "x": 8.544, "y": 4},
                 {"matrix": [10, 1], "label": "N", "x": 9.544, "y": 4},
                 {"matrix": [10, 2], "label": "M", "x": 10.544, "y": 4},
